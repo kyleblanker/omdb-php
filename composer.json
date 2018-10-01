@@ -1,0 +1,15 @@
+{
+    "name": "kyleblanker/omdb-php",
+    "type": "library",
+    "description": "Open movie database api wrapper",
+    "keywords": ["omdb", "movie", "media"],
+    "license": "MIT",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "KyleBlanker\\Omdb\\": "src/"
+        }
+    }
+}
