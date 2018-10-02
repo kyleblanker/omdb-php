@@ -161,9 +161,9 @@ class Client
      * Gets the poster for the media
      * 
      * @param string $imdbId
-     * @return array
+     * @return mixed
      */
-    public function getPoster(string $imdbId): array
+    public function getPoster(string $imdbId)
     {
         $query = ['apikey' => $this->apiKey,'i' => $imdbId];
         $response = $this->httpClient->request('GET',self::IMAGE_API_URL,['query' => $query]);
@@ -185,7 +185,7 @@ class Client
      * 
      * @return void
      */
-    private function baseQuery()
+    private function baseQuery(): void
     {
         $this->query = ['apikey' => $this->apiKey];
     }
