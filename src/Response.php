@@ -4,9 +4,20 @@ namespace KyleBlanker\Omdb;
 
 class Response
 {
+    /**
+     * @var mixed $results Results of the response
+     */
     protected $results;
-    protected $count;
-    protected $page;
+
+    /**
+     * @var int $count Count of the results
+     */
+    protected $count = 1;
+
+    /**
+     * @var int $page Current page of the results
+     */
+    protected $page = 1;
 
     public function __construct(string $content,int $page)
     {
@@ -15,24 +26,38 @@ class Response
             $this->results = $results->Search;
             $this->count = (int) $results->totalResults;
         } else {
-            $this->results = $results;
-            $this->count = 1;
+            $this->results = [$results];
         }
 
         $this->page = $page;
     }
 
+    /**
+     * Returns the results of the response
+     * 
+     * @return mixed
+     */
     public function results()
     {
         return $this->results;
     }
 
-    public function totalResults()
+    /**
+     * Returns the count
+     * 
+     * @return int
+     */
+    public function totalResults(): int
     {
         return $this->count;
     }
 
-    public function page()
+    /**
+     * Returns the current page
+     * 
+     * @return int
+     */
+    public function page(): int
     {
         return $this->page;
     }
