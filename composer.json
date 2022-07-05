@@ -5,7 +5,7 @@
     "keywords": ["omdb", "movie", "media"],
     "license": "MIT",
     "require": {
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle": "^7.2"
     },
     "autoload": {
         "psr-4": {
